@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace Confab.Modules.Conferences.Api.Controllers
 {
-    [Route("conferences-module")]
     internal class HostsController : BaseController
     {
         private readonly IHostService _hostService;
@@ -18,7 +17,7 @@ namespace Confab.Modules.Conferences.Api.Controllers
         }
 
         [HttpGet("{id:guid}")]
-        public async Task<ActionResult<HostDetailsDto>> GetAsync(Guid id) => OkOrNotFound(await _hostService.GetAsync(id));
+        public async Task<ActionResult<HostDetailsDto>> Get(Guid id) => OkOrNotFound(await _hostService.GetAsync(id));
 
         [HttpGet]
         public async Task<ActionResult<IReadOnlyList<HostDetailsDto>>> BrowseAsync() => Ok(await _hostService.BrowseAsync());
@@ -28,7 +27,7 @@ namespace Confab.Modules.Conferences.Api.Controllers
         {
             await _hostService.AddAsync(dto);
             
-            return CreatedAtAction(nameof(GetAsync), new { id = dto.Id }, null);
+            return CreatedAtAction(nameof(Get), new { id = dto.Id }, null);
         }
 
         [HttpPut("{id:guid}")]

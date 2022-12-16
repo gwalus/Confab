@@ -7,7 +7,7 @@ namespace Confab.Modules.Conferences.Core.DTO
     {
         public Guid Id { get; set; }
         public Guid HostId { get; set; }
-        
+
         [Required]
         [StringLength(100, MinimumLength = 3)]
         public string Name { get; set; }
@@ -20,5 +20,12 @@ namespace Confab.Modules.Conferences.Core.DTO
         public int? ParticipantsLimit { get; set; }
         public DateTime From { get; set; }
         public DateTime To { get; set; }
+    }
+
+    internal class ConferenceDetailsDto : ConferenceDto
+    {
+        [Required]
+        [StringLength(1000, MinimumLength = 3)]
+        public string Description { get; set; }
     }
 }

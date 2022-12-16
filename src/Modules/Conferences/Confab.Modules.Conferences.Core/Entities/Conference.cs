@@ -8,6 +8,7 @@ namespace Confab.Modules.Conferences.Core.Entities
         public Guid HostId { get; set; }
         public Host Host { get; set; }
         public string Name { get; set; }
+        public string Description { get; set; }
         public string HostName { get; set; }
         public string Location { get; set; }
         public string LogoUrl { get; set; }
