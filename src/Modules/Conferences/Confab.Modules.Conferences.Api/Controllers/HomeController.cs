@@ -2,6 +2,7 @@
 
 namespace Confab.Modules.Conferences.Api.Controllers
 {
+    [Route(BasePath)]
     internal class HomeController : BaseController
     {
         [HttpGet]
