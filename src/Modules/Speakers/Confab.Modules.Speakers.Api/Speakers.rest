@@ -1,0 +1,12 @@
+@url = http://localhost:5000/speakers-module
+
+@speakerId = 5e4a7c0b-de90-4a6c-b968-55ac34946717
+
+###
+GET {{url}}
+
+###
+GET {{url}}/speakers
+
+###
+GET {{url}}/speakers/{{speakerId}}

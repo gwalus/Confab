@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Confab.Modules.Conferences.Api.Controllers
+namespace Confab.Modules.Speakers.Api.Controllers
 {
     [ApiController]
-    [Route(ConferencesModule.BasePath + "/[controller]")]
-    internal class BaseController : ControllerBase
+    [Route(SpeakersModule.BasePath + "/[controller]")]
+    internal abstract class BaseController : ControllerBase
     {
         protected ActionResult<T> OkOrNotFound<T>(T model)
         {
-            if(model is null)
+            if (model is null)
             {
                 return NotFound();
             }
