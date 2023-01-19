@@ -1,0 +1,38 @@
+@url = http://localhost:5000/users-module 
+@email = user1@confab.io
+@password = secret 
+@role = user 
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlNmJmNDEzYi0yOWZjLTRmMDQtYmViMS1kMDE0MDFkZjRhYjMiLCJ1bmlxdWVfbmFtZSI6ImU2YmY0MTNiLTI5ZmMtNGYwNC1iZWIxLWQwMTQwMWRmNGFiMyIsImp0aSI6ImU2ZjYxODc3LThjMWItNDgwNi1hZGIwLTRjYzU4ZjI1OTNiZiIsImlhdCI6IjE2NzQxNTUxNzQ0MjkiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJ1c2VyIiwicGVybWlzc2lvbnMiOlsiY29uZmVyZW5jZXMiLCJob3N0cyIsInNwZWFrZXJzIiwidXNlcnMiXSwibmJmIjoxNjc0MTU1MTc0LCJleHAiOjE2NzQxOTExNzQsImlzcyI6ImNvbmZhYiJ9.HMdvWF1MCQGzQ6LUqiZYp8MB7Au0jxeVcNfNfwYZIVs
+
+### 
+GET {{url}}
+
+###
+GET {{url}}/account 
+Authorization: Bearer {{accessToken}}
+
+###
+POST {{url}}/account/sign-up 
+Content-Type: application/json
+
+{
+    "email": "{{email}}", 
+    "password": "{{password}}", 
+    "role": "{{role}}", 
+    "claims": 
+    {
+        "permissions": 
+        [
+            "conferences", "hosts", "speakers", "users"
+        ]
+    }
+}
+
+###
+POST {{url}}/account/sign-in 
+Content-Type: application/json
+
+{
+    "email": "{{email}}", 
+    "password": "{{password}}"
+}

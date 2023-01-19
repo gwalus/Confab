@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using System.Collections.Generic;
 
 namespace Confab.Shared.Abstractions.Modules
 {
@@ -8,6 +9,7 @@ namespace Confab.Shared.Abstractions.Modules
         string Name { get; }
         string Path { get; }
         void Register(IServiceCollection services);
+        IEnumerable<string> Policies => null;
         void Use(IApplicationBuilder applicationBuilder);
     }
 }

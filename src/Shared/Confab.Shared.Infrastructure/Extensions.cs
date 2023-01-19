@@ -1,11 +1,14 @@
 ﻿using Confab.Shared.Abstractions;
 using Confab.Shared.Abstractions.Modules;
 using Confab.Shared.Infrastructure.Api;
+using Confab.Shared.Infrastructure.Auth;
+using Confab.Shared.Infrastructure.Contexts;
 using Confab.Shared.Infrastructure.Exceptions;
 using Confab.Shared.Infrastructure.Postgres;
 using Confab.Shared.Infrastructure.Services;
 using Confab.Shared.Infrastructure.Time;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -37,6 +40,10 @@ namespace Confab.Shared.Infrastructure
                 }
             }
 
+            services.AddSingleton<IContextFactory, ContextFactory>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddTransient(sp => sp.GetRequiredService<IContextFactory>().Create());
+            services.AddAuth(modules);
             services.AddErrorHandling();
             services.AddPostgres();
             services.AddSingleton<IClock, UtcClock>();
@@ -68,7 +75,9 @@ namespace Confab.Shared.Infrastructure
         {
             // THIS IS MUST BE BEFERE USE ROUTING
             app.UseErrorHandling();
+            app.UseAuthentication();
             app.UseRouting();
+            app.UseAuthorization();
 
             return app;
         }

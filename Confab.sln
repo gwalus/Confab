@@ -27,9 +27,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Shared.Infrastructur
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Speakers", "Speakers", "{C0CE3E6B-F08C-42DA-9187-A58E6E572F1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Modules.Speakers.Api", "src\Modules\Speakers\Confab.Modules.Speakers.Api\Confab.Modules.Speakers.Api.csproj", "{65DF5A4D-FDD8-44D6-B693-72831A6B1FC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Speakers.Api", "src\Modules\Speakers\Confab.Modules.Speakers.Api\Confab.Modules.Speakers.Api.csproj", "{65DF5A4D-FDD8-44D6-B693-72831A6B1FC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Modules.Speakers.Core", "src\Modules\Speakers\Confab.Modules.Speakers.Core\Confab.Modules.Speakers.Core.csproj", "{A5A14AC1-F35E-4548-AB26-7B868AB0F6E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Speakers.Core", "src\Modules\Speakers\Confab.Modules.Speakers.Core\Confab.Modules.Speakers.Core.csproj", "{A5A14AC1-F35E-4548-AB26-7B868AB0F6E6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Users", "Users", "{4864A93C-E3E9-4055-BCC6-530FEE791042}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Modules.Users.Api", "src\Modules\Users\Confab.Modules.Users.Api\Confab.Modules.Users.Api.csproj", "{565074B4-FFB8-48FA-8468-335311D4B395}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Modules.Users.Core", "src\Modules\Users\Confab.Modules.Users.Core\Confab.Modules.Users.Core.csproj", "{0F72D811-FBF1-41EF-B582-1CD35D673919}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +71,14 @@ Global
 		{A5A14AC1-F35E-4548-AB26-7B868AB0F6E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5A14AC1-F35E-4548-AB26-7B868AB0F6E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5A14AC1-F35E-4548-AB26-7B868AB0F6E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{565074B4-FFB8-48FA-8468-335311D4B395}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{565074B4-FFB8-48FA-8468-335311D4B395}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{565074B4-FFB8-48FA-8468-335311D4B395}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{565074B4-FFB8-48FA-8468-335311D4B395}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F72D811-FBF1-41EF-B582-1CD35D673919}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F72D811-FBF1-41EF-B582-1CD35D673919}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F72D811-FBF1-41EF-B582-1CD35D673919}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F72D811-FBF1-41EF-B582-1CD35D673919}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +96,9 @@ Global
 		{C0CE3E6B-F08C-42DA-9187-A58E6E572F1C} = {41C685A4-310B-40CC-A18A-EF4E7A83F368}
 		{65DF5A4D-FDD8-44D6-B693-72831A6B1FC9} = {C0CE3E6B-F08C-42DA-9187-A58E6E572F1C}
 		{A5A14AC1-F35E-4548-AB26-7B868AB0F6E6} = {C0CE3E6B-F08C-42DA-9187-A58E6E572F1C}
+		{4864A93C-E3E9-4055-BCC6-530FEE791042} = {41C685A4-310B-40CC-A18A-EF4E7A83F368}
+		{565074B4-FFB8-48FA-8468-335311D4B395} = {4864A93C-E3E9-4055-BCC6-530FEE791042}
+		{0F72D811-FBF1-41EF-B582-1CD35D673919} = {4864A93C-E3E9-4055-BCC6-530FEE791042}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C80C36F9-72BE-48D1-93BE-485B8688367D}
