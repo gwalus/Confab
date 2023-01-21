@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Confab.Shared.Infrastructure.Api;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Confab.Modules.Speakers.Api.Controllers
 {
     [ApiController]
+    [ProducesDefaultContentType]
     [Route(SpeakersModule.BasePath + "/[controller]")]
     internal abstract class BaseController : ControllerBase
     {
