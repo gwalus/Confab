@@ -21,7 +21,7 @@ namespace Confab.Modules.Conferences.Api.Controllers
 
         [HttpGet("{id:guid}")]
         [AllowAnonymous]
-        public async Task<ActionResult<ConferenceDetailsDto>> GetAsync(Guid id) => OkOrNotFound(await _conferenceService.GetAsync(id));
+        public async Task<ActionResult<ConferenceDetailsDto>> Get(Guid id) => OkOrNotFound(await _conferenceService.GetAsync(id));
 
         [HttpGet]
         [AllowAnonymous]
@@ -32,7 +32,7 @@ namespace Confab.Modules.Conferences.Api.Controllers
         {
             await _conferenceService.AddAsync(dto);
 
-            return CreatedAtAction(nameof(GetAsync), new { id = dto.Id }, null);
+            return CreatedAtAction(nameof(Get), new { id = dto.Id }, null);
         }
 
         [HttpPut("{id:guid}")]
