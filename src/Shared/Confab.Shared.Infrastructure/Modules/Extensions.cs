@@ -1,4 +1,5 @@
-﻿using Confab.Shared.Abstractions.Modules;
+﻿using Confab.Shared.Abstractions.Events;
+using Confab.Shared.Abstractions.Modules;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
@@ -8,6 +9,8 @@ using Microsoft.Extensions.Hosting;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Threading.Tasks;
 
 namespace Confab.Shared.Infrastructure.Modules
 {
@@ -50,5 +53,39 @@ namespace Confab.Shared.Infrastructure.Modules
                     => Directory.EnumerateFiles(ctx.HostingEnvironment.ContentRootPath, searchPattern:
                         $"module.{pattern}.json", SearchOption.AllDirectories);
             });
+
+        internal static IServiceCollection AddModuleRequests(this IServiceCollection services, IList<Assembly> assemblies)
+        {
+            services.AddModuleRegistry(assemblies);
+
+            return services;
+        }
+
+        private static void AddModuleRegistry(this IServiceCollection services, IEnumerable<Assembly> assemblies)
+        {
+            var registry = new ModuleRegistry();
+
+            var types = assemblies.SelectMany(x => x.GetTypes()).ToArray();
+            var eventTypes = types.Where(x => x.IsClass && typeof(IEvent).IsAssignableFrom(x));
+        
+            services.AddSingleton<IModuleRegistry>(sp =>
+            {
+                var eventDispatcher = sp.GetRequiredService<IEventDispatcher>();
+                var eventDispatcherType = eventDispatcher.GetType();
+
+                foreach (var type in eventTypes)
+                {
+                    registry.AddBroadcastAction(type, @event =>
+                    
+                        (Task)eventDispatcherType.GetMethod(nameof(eventDispatcher.PublishAsync))
+                        ?.MakeGenericMethod(type)
+                        .Invoke(eventDispatcher, new[] { @event} ));  
+                };
+
+                return registry;
+            });
+
+            
+        }
     }
 }
