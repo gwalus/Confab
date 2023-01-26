@@ -57,6 +57,8 @@ namespace Confab.Shared.Infrastructure.Modules
         internal static IServiceCollection AddModuleRequests(this IServiceCollection services, IList<Assembly> assemblies)
         {
             services.AddModuleRegistry(assemblies);
+            services.AddSingleton<IModuleClient, ModuleClient>();
+            services.AddSingleton<IModuleSerializer, JsonModuleSerializer>();
 
             return services;
         }

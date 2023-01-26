@@ -1,4 +1,5 @@
-﻿using Confab.Modules.Conferences.Messages.Events;
+﻿//using Confab.Modules.Conferences.Messages.Events;
+using Confab.Modules.ticker.Core.Events.External;
 using Confab.Modules.Tickets.Core.Entities;
 using Confab.Modules.Tickets.Core.Repositories;
 using Confab.Shared.Abstractions.Events;
