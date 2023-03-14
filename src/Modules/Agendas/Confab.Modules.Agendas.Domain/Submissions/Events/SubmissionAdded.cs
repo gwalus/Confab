@@ -3,5 +3,5 @@ using Confab.Shared.Abstractions.Kernel;
 
 namespace Confab.Modules.Agendas.Domain.Submissions.Events
 {
-    public record SubmissionAdded(Submission submission) : IDomainEvent;
+    public record SubmissionAdded(Submission Submission) : IDomainEvent;
 }
