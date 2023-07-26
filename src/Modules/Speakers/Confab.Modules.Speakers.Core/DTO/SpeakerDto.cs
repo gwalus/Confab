@@ -1,10 +1,6 @@
 ﻿using Confab.Modules.Speakers.Core.Entities;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Confab.Modules.Speakers.Core.DTO
 {
@@ -28,7 +24,14 @@ namespace Confab.Modules.Speakers.Core.DTO
 
         internal Speaker AsEntity()
         {
-            throw new NotImplementedException();
+            return new Speaker
+            {
+                Id = Id,
+                Email = Email,
+                FullName = FullName,
+                Bio = Bio,
+                AvatarUrl = AvatarUrl
+            };
         }
     }
 }

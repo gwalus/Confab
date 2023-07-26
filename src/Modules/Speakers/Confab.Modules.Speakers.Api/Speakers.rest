@@ -2,6 +2,10 @@
 
 @speakerId = 5e4a7c0b-de90-4a6c-b968-55ac34946717
 
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmYjY2MTk2MC0zYmMxLTRlYTktYjc2YS0wYWI5Y2FhMzljYjkiLCJ1bmlxdWVfbmFtZSI6ImZiNjYxOTYwLTNiYzEtNGVhOS1iNzZhLTBhYjljYWEzOWNiOSIsImp0aSI6ImEzMTM1NjQxLWIzYzAtNDg0OS04YjUwLTVhOTc2YjZmYmQwOCIsImlhdCI6IjE2OTAzODEyNjcyMjYiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJ1c2VyIiwicGVybWlzc2lvbnMiOlsiY29uZmVyZW5jZXMiLCJob3N0cyIsInNwZWFrZXJzIiwidXNlcnMiLCJ0aWNrZXRzIl0sIm5iZiI6MTY5MDM4MTI2NywiZXhwIjoxNjkwNDE3MjY3LCJpc3MiOiJjb25mYWIifQ.3oNv8lFwU3nBp6p327JH3PLrF2U6WAz-bNgALbAOv0M
+
+@speakerId = fb661960-3bc1-4ea9-b76a-0ab9caa39cb9
+
 ###
 GET {{url}}
 
@@ -10,3 +14,27 @@ GET {{url}}/speakers
 
 ###
 GET {{url}}/speakers/{{speakerId}}
+
+###
+POST {{url}}/speakers
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+    "email": "grzegorzw@gmail.com",
+    "fullname": "Grzegorz W",
+    "bio": "this is my bio",
+    "avatarUrl": null
+}
+
+###
+PUT {{url}}/speakers/{{speakerId}}
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+    "email": "pioterg@gmail.com",
+    "fullname": "Piotr G",
+    "bio": "this is my bio",
+    "avatarUrl": null
+}

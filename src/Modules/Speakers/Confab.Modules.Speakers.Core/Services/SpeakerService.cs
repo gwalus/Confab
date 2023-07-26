@@ -39,7 +39,9 @@ namespace Confab.Modules.Speakers.Core.Services
         {
             var entities = await _repository.BrowseAsync();
 
-            return (IReadOnlyList<SpeakerDto>)(entities?.Select(e => e.AsDto()));
+            return entities?
+                .Select(e => e.AsDto())
+                .ToList();
         }
 
         public async Task DeleteAsync(Guid id)

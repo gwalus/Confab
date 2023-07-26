@@ -1,17 +1,36 @@
-﻿@url = http://localhost:5000/tickets-module @conferenceId = 00000000-0000-0000-0000-000000000000 @accessToken = secret
+﻿@url = http://localhost:5000/tickets-module 
 
-### GET {{url}}
+@conferenceId = 629b3d90-a0d7-4a6d-bc5b-405be2ba23dd
 
-### GET {{url}}/sales/conferences/{{conferenceId}}
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmYjY2MTk2MC0zYmMxLTRlYTktYjc2YS0wYWI5Y2FhMzljYjkiLCJ1bmlxdWVfbmFtZSI6ImZiNjYxOTYwLTNiYzEtNGVhOS1iNzZhLTBhYjljYWEzOWNiOSIsImp0aSI6ImEzMTM1NjQxLWIzYzAtNDg0OS04YjUwLTVhOTc2YjZmYmQwOCIsImlhdCI6IjE2OTAzODEyNjcyMjYiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJ1c2VyIiwicGVybWlzc2lvbnMiOlsiY29uZmVyZW5jZXMiLCJob3N0cyIsInNwZWFrZXJzIiwidXNlcnMiLCJ0aWNrZXRzIl0sIm5iZiI6MTY5MDM4MTI2NywiZXhwIjoxNjkwNDE3MjY3LCJpc3MiOiJjb25mYWIifQ.3oNv8lFwU3nBp6p327JH3PLrF2U6WAz-bNgALbAOv0M
 
-### GET {{url}}/sales/conferences/{{conferenceId}}/current
+### 
+GET {{url}}
 
-### POST {{url}}/sales/conferences/{{conferenceId}} Authorization: Bearer {{accessToken}} Content-Type: application/json
+### 
+GET {{url}}/sales/conferences/{{conferenceId}}
+
+### 
+GET {{url}}/sales/conferences/{{conferenceId}}/current
+
+### 
+POST {{url}}/sales/conferences/{{conferenceId}} 
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
 
 {
-"conferenceId": "{{conferenceId}}", "name": "Early bird", "price": 1000, "amount": 100, "from": "2021-05-01", "to": "2021-05-08"
+    "conferenceId": "{{conferenceId}}",
+    "name": "Reduced",
+    "price": 110,
+    "amount": 50, 
+    "from": "2023-09-01", 
+    "to": "2023-09-30"
 }
 
-### POST {{url}}/tickets/conferences/{{conferenceId}}/purchase Authorization: Bearer {{accessToken}}
+###
+POST {{url}}/tickets/conferences/{{conferenceId}}/purchase 
+Authorization: Bearer {{accessToken}}
 
-### GET {{url}}/tickets Authorization: Bearer {{accessToken}}
+### 
+GET {{url}}/tickets 
+Authorization: Bearer {{accessToken}}
