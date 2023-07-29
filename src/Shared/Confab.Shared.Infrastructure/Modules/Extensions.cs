@@ -86,8 +86,6 @@ namespace Confab.Shared.Infrastructure.Modules
 
                 return registry;
             });
-
-            
         }
     }
 }

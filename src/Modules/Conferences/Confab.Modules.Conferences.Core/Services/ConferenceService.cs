@@ -60,6 +60,7 @@ namespace Confab.Modules.Conferences.Core.Services
             //await _eventDispatcher.PublishAsync(new ConferenceCreated(conference.Id, conference.Name, 
             //    conference.ParticipantsLimit, conference.From, conference.To));
 
+            // Fire and forget if we using BackgroundDispatcher
             await _messageBroker.PublishAsync(new ConferenceCreated(conference.Id, conference.Name,
                 conference.ParticipantsLimit, conference.From, conference.To));
         }

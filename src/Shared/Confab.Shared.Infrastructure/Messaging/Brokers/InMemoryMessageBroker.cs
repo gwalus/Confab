@@ -34,6 +34,8 @@ namespace Confab.Shared.Infrastructure.Messaging.Brokers
 
             foreach (var message in messages)
             {
+                // Inject and use async message dispatcher (Channel writer)
+                // BackgroundDispatcher (BackgroundService) will be consumed this message.
                 if(_messagingOptions.UseBackgroundDispatcher)
                 {
                     await _asyncMessageDispatcher.PublishAsync(message);

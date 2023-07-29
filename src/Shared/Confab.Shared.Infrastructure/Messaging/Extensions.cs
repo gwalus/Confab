@@ -12,15 +12,15 @@ namespace Confab.Shared.Infrastructure.Messaging
         internal static IServiceCollection AddMessaging(this IServiceCollection services) 
         {
             services.AddSingleton<IMessageBroker, InMemoryMessageBroker>();
-            services.AddSingleton<IMessageChannel, MessageChannel>();
-            services.AddSingleton<IAsyncMessageDispatcher, AsyncMessageDispatcher>();
+            services.AddSingleton<IMessageChannel, MessageChannel>(); // Wrapper for Channel (Reader, Writer)
+            services.AddSingleton<IAsyncMessageDispatcher, AsyncMessageDispatcher>(); // Async data writer to channel
 
             var messagingOptions = services.GetOptions<MessagingOptions>(SectionName);
             services.AddSingleton(messagingOptions);
 
             if(messagingOptions.UseBackgroundDispatcher)
-            {
-                services.AddHostedService<BackgroundDispatcher>();
+            {               
+                services.AddHostedService<BackgroundDispatcher>(); // Data reader from channel and publish with ModuleClient
             }
 
             return services;

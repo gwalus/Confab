@@ -4,7 +4,8 @@
 
 @conferenceId = 629b3d90-a0d7-4a6d-bc5b-405be2ba23dd
 
-@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmYjY2MTk2MC0zYmMxLTRlYTktYjc2YS0wYWI5Y2FhMzljYjkiLCJ1bmlxdWVfbmFtZSI6ImZiNjYxOTYwLTNiYzEtNGVhOS1iNzZhLTBhYjljYWEzOWNiOSIsImp0aSI6ImEzMTM1NjQxLWIzYzAtNDg0OS04YjUwLTVhOTc2YjZmYmQwOCIsImlhdCI6IjE2OTAzODEyNjcyMjYiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJ1c2VyIiwicGVybWlzc2lvbnMiOlsiY29uZmVyZW5jZXMiLCJob3N0cyIsInNwZWFrZXJzIiwidXNlcnMiLCJ0aWNrZXRzIl0sIm5iZiI6MTY5MDM4MTI2NywiZXhwIjoxNjkwNDE3MjY3LCJpc3MiOiJjb25mYWIifQ.3oNv8lFwU3nBp6p327JH3PLrF2U6WAz-bNgALbAOv0M
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmYjY2MTk2MC0zYmMxLTRlYTktYjc2YS0wYWI5Y2FhMzljYjkiLCJ1bmlxdWVfbmFtZSI6ImZiNjYxOTYwLTNiYzEtNGVhOS1iNzZhLTBhYjljYWEzOWNiOSIsImp0aSI6IjM3NmRmOTg5LTlkMGQtNGVlYS1iNjRjLWRjYWM0MzdkZmI4MCIsImlhdCI6IjE2OTA0NDc4NjI1NzEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJ1c2VyIiwicGVybWlzc2lvbnMiOlsiY29uZmVyZW5jZXMiLCJob3N0cyIsInNwZWFrZXJzIiwidXNlcnMiLCJ0aWNrZXRzIl0sIm5iZiI6MTY5MDQ0Nzg2MiwiZXhwIjoxNjkwNDgzODYyLCJpc3MiOiJjb25mYWIifQ.3Sj6NR14QsZDY8lLvRSFGBhtKw3dY84J0wsultIXTxE
+
 ###
 GET {{url}}
 
@@ -46,11 +47,11 @@ Content-Type: application/json
 {
     "hostId": "{{hostId}}",
     "name": "C# Good practices",
-    "description": "Design Patterns",
+    "description": "Design Patterns v8",
     "location": "online",
     "from": "2023-12-01",
     "to": "2023-12-10",
-    "participantsLimit": "300",
+    "participantsLimit": "350",
     "logoUrl": null
 }
 
